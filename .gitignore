@@ -1,0 +1,19 @@
+# Maven build output
+target/
+out/
+
+# Node.js / SQLite data
+data/notepad.db
+data/notepad-notes.json
+node_modules/
+
+# IDE / editor
+.vscode/
+*.class
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Calculator history (runtime file)
+calculator_history.txt

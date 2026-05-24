@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易记事本</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="grain"></div>
+    <main class="notepad-page">
+        <header class="head">
+            <a class="back-link" href="../../index.html"><- 返回项目集合</a>
+            <p class="tag">项目二</p>
+            <h1>简易记事本</h1>
+            <p class="desc">可新增、编辑、删除和搜索笔记，优先保存到服务端 SQLite 数据库，离线时自动回退本地存储。</p>
+        </header>
+
+        <section class="board">
+            <div class="panel editor-panel">
+                <div class="panel-title-row">
+                    <h2>编辑区</h2>
+                    <div class="editor-tools">
+                        <span id="editState" class="state">新建模式</span>
+                        <button id="newNoteBtn" class="btn mini add">新增笔记</button>
+                    </div>
+                </div>
+
+                <label class="field">
+                    <span>标题</span>
+                    <input id="noteTitle" type="text" placeholder="输入标题，例如：明日待办" maxlength="60">
+                </label>
+
+                <label class="field">
+                    <span>内容</span>
+                    <textarea id="noteContent" placeholder="输入正文内容..." maxlength="5000"></textarea>
+                </label>
+
+                <div class="actions">
+                    <button id="saveBtn" class="btn primary">保存笔记</button>
+                    <button id="resetBtn" class="btn ghost">清空编辑</button>
+                    <button id="deleteBtn" class="btn danger" disabled>删除当前</button>
+                </div>
+            </div>
+
+            <div class="panel list-panel">
+                <div class="panel-title-row">
+                    <h2>笔记列表</h2>
+                    <button id="clearAllBtn" class="btn mini danger">清空全部</button>
+                </div>
+
+                <label class="field search-field">
+                    <span>搜索</span>
+                    <input id="searchInput" type="text" placeholder="按标题或内容关键字过滤">
+                </label>
+
+                <ul id="noteList" class="note-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
